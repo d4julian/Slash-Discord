@@ -17,11 +17,8 @@ Simply insert your discord link. `discord="InsertDiscordLinkHere"`
 **!** - Make sure it starts with `https://` or `http://`
 
 
-## Permissions Nodes!
-There is only one permission node for this plugin
-`simple.discord` - Allows the player to use the command `/discord`
-Yup! That simple.
-
+## Commands
+Only one command for this plugin. You guessed it! **/discord**
 
 ## Any issues? Suggestions?
 Feel free to contact me on [Discord](https://discord.gg/RQUqvQH) or leave an issue here on GitHub.
