@@ -1,0 +1,17 @@
+[
+    {
+        "modid": "simplediscord",
+        "name": "Simple /Discord",
+        "version": "1.2.0",
+        "description": "Creates /discord command to display customizable Discord link and message.",
+        "authorList": [
+            "juliann"
+        ],
+        "dependencies": [
+            "spongeapi@7.1.0"
+        ],
+        "requiredMods": [
+            "spongeapi@7.1.0"
+        ]
+    }
+]

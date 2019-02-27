@@ -1,0 +1,19 @@
+plugins {
+    id 'org.spongepowered.plugin' version '0.8.1'
+    id 'java'
+}
+
+group 'net.dirtcraft.julian'
+version '1.2.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'sponge'
+        url = 'http://repo.spongepowered.org/maven'
+    }
+}
+
+dependencies {
+    compile 'org.spongepowered:spongeapi:7.1.0'
+}
