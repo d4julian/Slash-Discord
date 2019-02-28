@@ -12,7 +12,6 @@ import org.spongepowered.api.service.pagination.PaginationList;
 import org.spongepowered.api.text.Text;
 import org.spongepowered.api.text.action.TextActions;
 import org.spongepowered.api.text.format.TextColors;
-import org.spongepowered.api.text.format.TextStyles;
 import org.spongepowered.api.text.serializer.TextSerializers;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -39,7 +38,7 @@ public class SendMessage implements CommandExecutor {
         ArrayList<Text> contents = new ArrayList<Text>();
         contents.add(Text.of(""));
         contents.add(TextSerializers.FORMATTING_CODE.deserialize(prefix + message));
-        contents.add(processLinks((Text.of(TextColors.BLUE,TextStyles.BOLD,"» ",TextStyles.RESET,TextColors.GREEN, TextStyles.UNDERLINE,link))));
+        contents.add(processLinks(TextSerializers.FORMATTING_CODE.deserialize(prefix + "&a&n" + link)));
         contents.add(Text.of(""));
 
 
