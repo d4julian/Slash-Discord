@@ -20,7 +20,7 @@ import org.spongepowered.api.text.Text;
 @Plugin(
         id = "slashdiscord",
         name = "Slash Discord",
-        version = "1.3.1",
+        version = "1.3.2",
         description = "Creates a /discord command to show a fully customizable Discord link and message.",
         authors = {
                 "juliann"

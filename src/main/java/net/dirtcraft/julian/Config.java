@@ -33,13 +33,13 @@ public class Config {
     }
     private static void addValues() {
 
-        confNode.getNode("SlashDiscord", "message")
+        confNode.getNode("Discord", "message")
                 .setValue("&6&lJoin us on Discord")
                 .setComment("Customize your message here");
-        confNode.getNode("SlashDiscord", "discordlink")
+        confNode.getNode("Discord", "discordlink")
                 .setValue("https://discord.gg/XXXXXX")
                 .setComment("Insert Discord link here");
-        confNode.getNode("SlashDiscord", "prefix")
+        confNode.getNode("Discord", "prefix")
                 .setValue("&9&l» ")
                 .setComment("Insert prefix before message and link here");
         confNode.getNode("Pagination", "header")

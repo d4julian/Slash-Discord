@@ -4,6 +4,11 @@
 Edit the `slashdiscord.conf` file located in your config folder
 Everything about this plugin is customizable. If you need any help, please contact us [Here](https://discord.gg/mGgfyaS)
 
+## Commands
+Only one command for this plugin. You guessed it! **/discord**
+
+## Reloading
+To reload this plugin, use the command `/sponge plugins reload slashdiscord`
 ```
 Discord {
     # Insert Discord link here
@@ -20,10 +25,7 @@ Pagination {
     padding="&7&m-"
 }
 ```
-####- Make sure your Discord link starts with `https://` or `http://`
-
-## Commands
-Only one command for this plugin. You guessed it! **/discord**
+#### Make sure your Discord link starts with `https://` or `http://`
 
 ## Any issues? Suggestions?
 Feel free to contact me on [Discord](https://discord.gg/mGgfyaS) or leave an issue here on GitHub.
