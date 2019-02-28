@@ -30,12 +30,15 @@ public class SendMessage implements CommandExecutor {
     @Override
     public CommandResult execute(CommandSource source, CommandContext args) throws CommandException {
 
-        String message = Config.getConfNode("SimpleDiscord", "message").getString("message");
-        String link = Config.getConfNode("SimpleDiscord", "discordlink").getString("discordlink");
+        String message = Config.getConfNode("Discord", "message").getString("message");
+        String link = Config.getConfNode("Discord", "discordlink").getString("discordlink");
+        String prefix = Config.getConfNode("Discord", "prefix").getString("prefix");
+        String header = Config.getConfNode("Pagination", "header").getString("header");
+        String padding = Config.getConfNode("Pagination", "padding").getString("padding");
 
         ArrayList<Text> contents = new ArrayList<Text>();
         contents.add(Text.of(""));
-        contents.add(TextSerializers.FORMATTING_CODE.deserialize("&9&l» " + message));
+        contents.add(TextSerializers.FORMATTING_CODE.deserialize(prefix + message));
         contents.add(processLinks((Text.of(TextColors.BLUE,TextStyles.BOLD,"» ",TextStyles.RESET,TextColors.GREEN, TextStyles.UNDERLINE,link))));
         contents.add(Text.of(""));
 
@@ -44,8 +47,8 @@ public class SendMessage implements CommandExecutor {
 
             Player player = (Player) source;
             PaginationList.builder()
-                    .title(Text.of(TextColors.RED,"Discord Server"))
-                    .padding(Text.of(TextColors.GRAY,TextStyles.STRIKETHROUGH,"-"))
+                    .title(TextSerializers.FORMATTING_CODE.deserialize(header))
+                    .padding(TextSerializers.FORMATTING_CODE.deserialize(padding))
                     .contents(contents)
                     .build()
                     .sendTo(source);

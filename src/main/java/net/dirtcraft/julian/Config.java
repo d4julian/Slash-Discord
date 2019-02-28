@@ -37,12 +37,21 @@ public class Config {
     }
     private static void addValues() {
 
-        confNode.getNode("SimpleDiscord", "message")
+        confNode.getNode("Discord", "message")
                 .setValue("&6&lJoin us on Discord")
                 .setComment("Customize your message here");
-        confNode.getNode("SimpleDiscord", "discordlink")
+        confNode.getNode("Discord", "discordlink")
                 .setValue("https://discord.gg/XXXXXX")
-                .setComment("Insert your Discord link here");
+                .setComment("Insert Discord link here");
+        confNode.getNode("Discord", "prefix")
+                .setValue("&9&l» ")
+                .setComment("Insert prefix before message and link here");
+        confNode.getNode("Pagination", "header")
+                .setValue("&cDiscord Server")
+                .setComment("Insert your pagination header here");
+        confNode.getNode("Pagination", "padding")
+                .setValue("&7&m-")
+                .setComment("Insert your pagination padding here");
     }
 
     public static CommentedConfigurationNode getConfNode(Object... node) {

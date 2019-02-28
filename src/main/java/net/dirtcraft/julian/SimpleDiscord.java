@@ -20,7 +20,7 @@ import org.spongepowered.api.text.Text;
 @Plugin(
         id = "simplediscord",
         name = "Simple /Discord",
-        version = "1.2.0",
+        version = "1.3.0",
         description = "Creates /discord command to display customizable Discord link and message.",
         authors = {
                 "juliann"
