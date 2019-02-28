@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.dirtcraft.julian.SimpleDiscord.iml" filepath="$PROJECT_DIR$/.idea/modules/net.dirtcraft.julian.SimpleDiscord.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.dirtcraft.julian.SimpleDiscord.main.iml" filepath="$PROJECT_DIR$/.idea/modules/net.dirtcraft.julian.SimpleDiscord.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.dirtcraft.julian.SimpleDiscord.test.iml" filepath="$PROJECT_DIR$/.idea/modules/net.dirtcraft.julian.SimpleDiscord.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.dirtcraft.julian.SlashDiscord.iml" filepath="$PROJECT_DIR$/.idea/modules/net.dirtcraft.julian.SlashDiscord.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.dirtcraft.julian.SlashDiscord.main.iml" filepath="$PROJECT_DIR$/.idea/modules/net.dirtcraft.julian.SlashDiscord.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.dirtcraft.julian.SlashDiscord.test.iml" filepath="$PROJECT_DIR$/.idea/modules/net.dirtcraft.julian.SlashDiscord.test.iml" />
     </modules>
   </component>
 </project>
