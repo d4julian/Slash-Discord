@@ -21,4 +21,4 @@ Simply insert your discord link. `discord="InsertDiscordLinkHere"`
 Only one command for this plugin. You guessed it! **/discord**
 
 ## Any issues? Suggestions?
-Feel free to contact me on [Discord](https://discord.gg/RQUqvQH) or leave an issue here on GitHub.
+Feel free to contact me on [Discord](https://discord.gg/mGgfyaS) or leave an issue here on GitHub.
