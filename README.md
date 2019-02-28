@@ -25,7 +25,14 @@ Pagination {
     padding="&7&m-"
 }
 ```
+<<<<<<< HEAD
 #### Make sure your Discord link starts with `https://` or `http://`
+=======
+#### - Make sure your Discord link starts with `https://` or `http://`
+
+## Commands
+Only one command for this plugin. You guessed it! **/discord**
+>>>>>>> e16199b016804e6649c932189862748cb8803ad5
 
 ## Any issues? Suggestions?
 Feel free to contact me on [Discord](https://discord.gg/mGgfyaS) or leave an issue here on GitHub.
