@@ -12,6 +12,8 @@ Only one command for this plugin. You guessed it! **/discord**
 
 ## Reloading
 To reload this plugin, use the command `/sponge plugins reload slashdiscord`
+
+## Configuration
 ```
 Discord {
     # Insert Discord link here
@@ -29,9 +31,6 @@ Pagination {
 }
 ```
 #### Make sure your Discord link starts with `https://` or `http://`
-
-## Commands
-Only one command for this plugin. You guessed it! **/discord**
 
 ## Any issues? Suggestions?
 Feel free to contact me on [Discord](https://discord.gg/mGgfyaS) or leave an issue here on GitHub.
