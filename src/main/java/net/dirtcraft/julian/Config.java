@@ -8,10 +8,6 @@ import java.io.IOException;
 
 public class Config {
 
-    public static void setConfNode(CommentedConfigurationNode confNode) {
-        Config.confNode = confNode;
-    }
-
     public static File config;
     public static ConfigurationLoader<CommentedConfigurationNode> loader;
     public static CommentedConfigurationNode confNode;

@@ -3,6 +3,8 @@ package net.dirtcraft.julian;
 import com.google.inject.Inject;
 import ninja.leaping.configurate.commented.CommentedConfigurationNode;
 import ninja.leaping.configurate.loader.ConfigurationLoader;
+import ninja.leaping.configurate.objectmapping.Setting;
+import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
 import org.slf4j.Logger;
 import org.spongepowered.api.Sponge;
 
@@ -20,7 +22,7 @@ import org.spongepowered.api.text.Text;
 @Plugin(
         id = "simplediscord",
         name = "Simple /Discord",
-        version = "1.3.0",
+        version = "1.3.1",
         description = "Creates /discord command to display customizable Discord link and message.",
         authors = {
                 "juliann"
@@ -73,5 +75,4 @@ public class SimpleDiscord {
         Config.setup(file, loader);
         Config.load();
     }
-
 }
