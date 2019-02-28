@@ -23,7 +23,6 @@ Pagination {
 ```
 ####- Make sure your Discord link starts with `https://` or `http://`
 
-
 ## Commands
 Only one command for this plugin. You guessed it! **/discord**
 
