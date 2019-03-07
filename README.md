@@ -7,11 +7,12 @@ Everything about this plugin is customizable.
 ## Support
 If you need any help, please contact us on [Discord](https://discord.gg/mGgfyaS)
 
-## Commands
-Only one command for this plugin. You guessed it! **/discord**
+## Commands/Permissions
+**/discord** - *No Permission*
+**/discord reload** - *slashdiscord.reload*
 
 ## Reloading
-To reload this plugin, use the command `/sponge plugins reload slashdiscord`
+To reload this plugin, use the command `/discord reload`
 ```
 Discord {
     # Insert Discord link here

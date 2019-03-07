@@ -8,6 +8,7 @@ import org.spongepowered.api.Sponge;
 
 import java.io.File;
 import org.spongepowered.api.command.CommandSource;
+import org.spongepowered.api.command.spec.CommandExecutor;
 import org.spongepowered.api.command.spec.CommandSpec;
 import org.spongepowered.api.config.DefaultConfig;
 import org.spongepowered.api.event.Listener;
@@ -20,7 +21,7 @@ import org.spongepowered.api.text.Text;
 @Plugin(
         id = "slashdiscord",
         name = "Slash Discord",
-        version = "1.3.3",
+        version = "1.3.4",
         description = "Creates a /discord command to show a fully customizable Discord link and message.",
         authors = {
                 "juliann"
@@ -35,11 +36,11 @@ public class SlashDiscord {
 
     @Inject
     @DefaultConfig(sharedRoot = true)
-    private ConfigurationLoader<CommentedConfigurationNode> loader;
+    public ConfigurationLoader<CommentedConfigurationNode> loader;
 
     @Inject
     @DefaultConfig(sharedRoot = true)
-    private File file;
+    public File file;
 
     private static SlashDiscord instance;
 
@@ -59,9 +60,15 @@ public class SlashDiscord {
                         + version.getVersion().orElse("")
                         + ")! Hey, I'm alive!");
 
+        CommandSpec reloadCmd = CommandSpec.builder()
+                .description(Text.of("Reload command for Slash Discord"))
+                .executor(new Reload())
+                .permission("slashdiscord.reload")
+                .build();
         CommandSpec command = CommandSpec.builder()
                 .description(Text.of("Base command for Slash Discord"))
                 .executor(new SendMessage())
+                .child(reloadCmd, "reload", "rl")
                 .build();
 
         Sponge.getCommandManager().register(instance, command, "discord");
@@ -72,4 +79,5 @@ public class SlashDiscord {
         Config.setup(file, loader);
         Config.load();
     }
+
 }
