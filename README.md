@@ -9,6 +9,7 @@ If you need any help, please contact us on [Discord](https://discord.gg/mGgfyaS)
 
 ## Commands/Permissions
 **/discord** - *No Permission*
+
 **/discord reload** - *slashdiscord.reload*
 ```
 Discord {
