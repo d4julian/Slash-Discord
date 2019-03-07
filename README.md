@@ -10,9 +10,6 @@ If you need any help, please contact us on [Discord](https://discord.gg/mGgfyaS)
 ## Commands/Permissions
 **/discord** - *No Permission*
 **/discord reload** - *slashdiscord.reload*
-
-## Reloading
-To reload this plugin, use the command `/discord reload`
 ```
 Discord {
     # Insert Discord link here
