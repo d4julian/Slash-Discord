@@ -11,40 +11,50 @@ import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.service.pagination.PaginationList;
 import org.spongepowered.api.text.Text;
 import org.spongepowered.api.text.action.TextActions;
-import org.spongepowered.api.text.format.TextColors;
 import org.spongepowered.api.text.serializer.TextSerializers;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class SendMessage implements CommandExecutor {
     private CommandSource source;
 
-    private final Pattern urlPattern = Pattern.compile("https?://\\S*");
     @Inject
     private Logger logger;
 
     @Override
     public CommandResult execute(CommandSource source, CommandContext args) throws CommandException {
 
-        String message = Config.getConfNode("Discord", "message").getString("message");
-        String link = Config.getConfNode("Discord", "discordlink").getString("discordlink");
-        String prefix = Config.getConfNode("Discord", "prefix").getString("prefix");
-        String header = Config.getConfNode("Pagination", "header").getString("header");
-        String padding = Config.getConfNode("Pagination", "padding").getString("padding");
+        String message = ConfigManager.getConfNode("Discord", "message").getString();
+        String link = ConfigManager.getConfNode("Discord", "discordlink").getString();
+        String prefix = ConfigManager.getConfNode("Discord", "prefix").getString();
+        String header = ConfigManager.getConfNode("Pagination", "header").getString();
+        String padding = ConfigManager.getConfNode("Pagination", "padding").getString();
+        String hover = ConfigManager.getConfNode("Discord", "hover").getString();
 
         ArrayList<Text> contents = new ArrayList<Text>();
-        contents.add(Text.of(""));
-        contents.add(TextSerializers.FORMATTING_CODE.deserialize(prefix + message));
-        contents.add(processLinks(TextSerializers.FORMATTING_CODE.deserialize(prefix + "&a&n" + link)));
-        contents.add(Text.of(""));
+        try {
+        contents.add(
+                Text.builder()
+                .append(Text.builder()
+                        .append(TextSerializers.FORMATTING_CODE.deserialize("\n" + prefix + message))
+                        .build())
+                        .onHover(TextActions.showText(TextSerializers.FORMATTING_CODE.deserialize(hover)))
+                        .onClick(TextActions.openUrl(new URL(link)))
+                        .build());
+        contents.add(
+                Text.builder()
+                .append(Text.builder()
+                .append(TextSerializers.FORMATTING_CODE.deserialize(prefix + "&a&n" + link + "\n"))
+                        .build())
+                .onHover(TextActions.showText(TextSerializers.FORMATTING_CODE.deserialize(hover)))
+                .onClick(TextActions.openUrl(new URL(link)))
+                .build());
+        } catch (MalformedURLException ignored) {}
 
 
         if(source instanceof Player) {
 
-            Player player = (Player) source;
             PaginationList.builder()
                     .title(TextSerializers.FORMATTING_CODE.deserialize(header))
                     .padding(TextSerializers.FORMATTING_CODE.deserialize(padding))
@@ -53,23 +63,9 @@ public class SendMessage implements CommandExecutor {
                     .sendTo(source);
 
         } else {
-
-            source.sendMessage(Text.of(TextColors.RED,"Only a player can use this command"));
+            logger.error("Slash Discord can only be used in-game!");
         }
         return CommandResult.success();
     }
 
-    private final Text processLinks(Text msg) {
-        Matcher matcher = urlPattern.matcher(msg.toPlain());
-        if (matcher.find()) {
-            try {
-                return Text.builder().append(msg)
-                        .onClick(TextActions.openUrl(new URL(matcher.group())))
-                        .build();
-            } catch (MalformedURLException e) {
-                logger.warn("Error parsing Discord Link. Link: " + matcher.group() + " Error: " + e.getMessage());
-            }
-        }
-        return msg;
-    }
 }

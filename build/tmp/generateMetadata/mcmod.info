@@ -1,7 +1,17 @@
 [
     {
         "modid": "slashdiscord",
-        "name": "SlashDiscord",
-        "version": "1.3.4"
+        "name": "Slash Discord",
+        "version": "1.4.0",
+        "description": "Creates a /discord command to show a fully customizable Discord link and message.",
+        "authorList": [
+            "juliann"
+        ],
+        "dependencies": [
+            "spongeapi@7.1.0-SNAPSHOT"
+        ],
+        "requiredMods": [
+            "spongeapi@7.1.0-SNAPSHOT"
+        ]
     }
 ]

@@ -1,16 +1,14 @@
 package net.dirtcraft.julian;
 
 import com.google.inject.Inject;
-import ninja.leaping.configurate.commented.CommentedConfigurationNode;
-import ninja.leaping.configurate.loader.ConfigurationLoader;
 import org.slf4j.Logger;
 import org.spongepowered.api.Sponge;
 
-import java.io.File;
+import java.nio.file.Path;
+
 import org.spongepowered.api.command.CommandSource;
-import org.spongepowered.api.command.spec.CommandExecutor;
 import org.spongepowered.api.command.spec.CommandSpec;
-import org.spongepowered.api.config.DefaultConfig;
+import org.spongepowered.api.config.ConfigDir;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.game.GameReloadEvent;
 import org.spongepowered.api.event.game.state.GameInitializationEvent;
@@ -21,7 +19,7 @@ import org.spongepowered.api.text.Text;
 @Plugin(
         id = "slashdiscord",
         name = "Slash Discord",
-        version = "1.3.4",
+        version = "1.4.0",
         description = "Creates a /discord command to show a fully customizable Discord link and message.",
         authors = {
                 "juliann"
@@ -32,32 +30,28 @@ public class SlashDiscord {
     @Inject
     private Logger logger;
     @Inject
-    private PluginContainer version;
-
-    @Inject
-    @DefaultConfig(sharedRoot = true)
-    public ConfigurationLoader<CommentedConfigurationNode> loader;
-
-    @Inject
-    @DefaultConfig(sharedRoot = true)
-    public File file;
-
+    private PluginContainer container;
+    private CommandSource source;
     private static SlashDiscord instance;
+
+    @Inject
+    @ConfigDir(sharedRoot = false)
+    private Path dir;
 
     @Listener
     public void onPreInit(GameInitializationEvent e) {
-        Config.setup(file, loader);
-        Config.load();
+        instance = this;
+        ConfigManager.setup(dir);
+        ConfigManager.load();
+        logger.info(container.getName() + "has successfully loaded config files!");
     }
-
-    private CommandSource source;
 
     @Listener
     public void onGameInit(GameInitializationEvent e) {
 
-        instance = this;
-        logger.info("Slash Discord running (version "
-                        + version.getVersion().orElse("")
+        logger.info(container.getName() +
+                " running (version "
+                        + container.getVersion().orElse("")
                         + ")! Hey, I'm alive!");
 
         CommandSpec reloadCmd = CommandSpec.builder()
@@ -71,13 +65,12 @@ public class SlashDiscord {
                 .child(reloadCmd, "reload", "rl")
                 .build();
 
-        Sponge.getCommandManager().register(instance, command, "discord");
+        Sponge.getCommandManager().register(this, command, "discord");
     }
 
     @Listener
     public void onGameReload(GameReloadEvent e) {
-        Config.setup(file, loader);
-        Config.load();
+        ConfigManager.load();
     }
 
 }
