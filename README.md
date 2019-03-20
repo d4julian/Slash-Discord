@@ -1,7 +1,7 @@
 # Slash Discord - Creates /discord command to display customizable discord link and message.
 ![Image](https://cdn.discordapp.com/attachments/529496121790169119/549811951450980362/b42318a6b4d89a607035038d5d31ba9c.png)
 ## Warning! Extremely simple.
-Edit the `slashdiscord.conf` file located in your config folder
+Edit the `slashdiscord/Slash-Discord.conf` file located in your config folder
 Everything about this plugin is customizable.
 
 ## Support
