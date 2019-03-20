@@ -8,13 +8,16 @@ Everything about this plugin is customizable.
 If you need any help, please contact us on [Discord](https://discord.gg/mGgfyaS)
 
 ## Commands/Permissions
-**/discord** - *No Permission*
+**/discord** - `N/A`
 
-**/discord reload** - *slashdiscord.reload*
+**/discord reload** - `slashdiscord.reload`
+## Configuration
 ```
 Discord {
     # Insert Discord link here
-    discordlink="https://discord.gg/XXXXXX"
+    discordlink="https://discord.gg/mGgfyaS"
+    # Insert text when hovering over link here
+    hover="&6Click me to join our Discord!"
     # Customize your message here
     message="&6&lJoin us on Discord"
     # Insert prefix before message and link here
@@ -29,8 +32,5 @@ Pagination {
 ```
 #### Make sure your Discord link starts with `https://` or `http://`
 
-## Commands
-Only one command for this plugin. You guessed it! **/discord**
-
 ## Any issues? Suggestions?
-Feel free to contact me on [Discord](https://discord.gg/mGgfyaS) or leave an issue here on GitHub.
+Feel free to contact me on [Discord](https://discord.gg/mGgfyaS) or leave an issue on GitHub.
