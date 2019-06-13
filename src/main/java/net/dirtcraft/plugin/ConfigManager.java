@@ -1,4 +1,4 @@
-package net.dirtcraft.julian;
+package net.dirtcraft.plugin;
 
 import ninja.leaping.configurate.commented.CommentedConfigurationNode;
 import ninja.leaping.configurate.hocon.HoconConfigurationLoader;
