@@ -41,7 +41,7 @@ public class SlashDiscord {
     private Path dir;
 
     @Listener
-    public void onPreInit(GameInitializationEvent event) {
+    public void onPreInit(GamePreInitializationEvent event) {
         instance = this;
 
         ConfigManager.setup(dir);
